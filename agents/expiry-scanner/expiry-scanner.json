@@ -1,0 +1,45 @@
+{
+	"name": "expiry-scanner",
+	"description": "Scans credentials table daily for expiring API keys and classifies urgency",
+	"instruction": { "$file": "instruction.md" },
+	"toolsets": ["POD"],
+	"visibility": "POD",
+	"permissions": {
+		"grants": [
+		  {
+		    "resource_type": "datastore_table",
+		    "resource_name": "credentials",
+		    "permission_ids": [
+		      "datastore.table.read",
+		      "datastore.record.read",
+		      "datastore.record.write"
+		    ]
+		  },
+		  {
+		    "resource_type": "datastore_table",
+		    "resource_name": "audit_log",
+		    "permission_ids": [
+		      "datastore.table.read",
+		      "datastore.record.read",
+		      "datastore.record.write"
+		    ]
+		  },
+		  {
+		    "resource_type": "function",
+		    "resource_name": "notify_slack",
+		    "permission_ids": [
+		      "function.read",
+		      "function.execute"
+		    ]
+		  },
+		  {
+		    "resource_type": "function",
+		    "resource_name": "notify_discord",
+		    "permission_ids": [
+		      "function.execute",
+		      "function.read"
+		    ]
+		  }
+		]
+	}
+}

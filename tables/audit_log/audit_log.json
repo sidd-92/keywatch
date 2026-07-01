@@ -1,0 +1,23 @@
+{
+	"name": "audit_log",
+	"primary_key_column": "id",
+	"enable_rls": false,
+	"visibility": "POD",
+	"columns": [
+		{ "name": "credential_name", "type": "TEXT", "required": true, "max_length": 240 },
+		{
+			"name": "provider",
+			"type": "ENUM",
+			"required": true,
+			"default": "stripe",
+			"options": ["stripe", "resend", "github", "aws"]
+		},
+		{ "name": "action", "type": "TEXT", "required": true },
+		{ "name": "triggered_by", "type": "TEXT", "required": true, "max_length": 100 },
+		{ "name": "old_expiry", "type": "DATE", "required": false },
+		{ "name": "new_expiry", "type": "DATE", "required": false },
+		{ "name": "slack_notified", "type": "BOOLEAN", "required": false },
+		{ "name": "notes", "type": "TEXT", "required": false }
+	],
+	"config": {}
+}

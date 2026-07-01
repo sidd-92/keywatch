@@ -1,0 +1,8 @@
+{
+	"name": "daily-expiry-scan",
+	"schedule_type": "TIME",
+	"config": { "cron": "30 4 * * *" },
+	"agent_name": "expiry-scanner",
+	"is_active": true,
+	"visibility": "POD"
+}

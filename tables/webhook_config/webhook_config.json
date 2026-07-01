@@ -1,0 +1,12 @@
+{
+	"name": "webhook_config",
+	"primary_key_column": "id",
+	"enable_rls": false,
+	"visibility": "POD",
+	"columns": [
+		{ "name": "key", "type": "TEXT", "required": true, "unique": true, "max_length": 100 },
+		{ "name": "value", "type": "TEXT", "required": true, "max_length": 500 },
+		{ "name": "description", "type": "TEXT", "required": false, "max_length": 240 }
+	],
+	"config": {}
+}
