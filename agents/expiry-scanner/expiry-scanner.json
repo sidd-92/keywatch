@@ -25,6 +25,14 @@
 		    ]
 		  },
 		  {
+		    "resource_type": "datastore_table",
+		    "resource_name": "webhook_config",
+		    "permission_ids": [
+		      "datastore.table.read",
+		      "datastore.record.read"
+		    ]
+		  },
+		  {
 		    "resource_type": "function",
 		    "resource_name": "notify_slack",
 		    "permission_ids": [
